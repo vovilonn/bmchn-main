@@ -73,6 +73,7 @@
       letter-spacing: -0.16px;
       opacity: 0;
       animation: .5s ease-in-out 2s fadeIn forwards;
+      max-width: 440px;
 
       @include media('<tablet') {
         max-width: 260px;
@@ -178,16 +179,15 @@
   overflow: hidden;
 
   &__text {
-    padding: 32px 32px 56px;
+    padding: 32px;
 
     @include media('<tablet') {
-      padding: 16px 16px 44px;
+      padding: 16px;
     }
 
     img {
       width: 100%;
       max-width: 100%;
-      margin-bottom: 42px;
     }
 
     p {
@@ -400,6 +400,22 @@
     margin: 0 auto;
     overflow: auto;
     padding-right: 20px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 3.3vh;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background: #99999D;
+    }
 
     @include media('<tablet') {
       max-height: 400px;
@@ -809,7 +825,11 @@
 }
 
 .biomachine-promo {
-  padding: 50px 0;
+  padding: 50px 0 0;
+
+  & +.biomachine-promo {
+    padding-top: 77px;
+  }
 
   &.--last {
     position: relative;
@@ -874,7 +894,7 @@
 }
 
 .biomachine-store {
-  padding: 77px 32px;
+  padding: 154px 32px 77px;
   background: #F1F1F1 !important;
   transition: .5s ease-in-out;
 
@@ -1118,6 +1138,11 @@
       opacity: 0;
       visibility: hidden;
       transition: .3s ease-in-out;
+
+      @include hover() {
+        background: #1E1E1E;
+        color: #F1F1F1;
+      }
     }
   }
 
@@ -1287,7 +1312,7 @@
   }
 
   &__text {
-    padding: 150px 16px 59px;
+    padding: 230px 16px 59px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1319,6 +1344,11 @@
     .btn {
       background: #F1F1F1;
       color: #1D1D1F;
+
+      @include hover() {
+        background: #1E1E1E;
+        color: #F1F1F1;
+      }
     }
   }
 }

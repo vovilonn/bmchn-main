@@ -43,6 +43,20 @@
     }
   }
 
+  &__dsc {
+    position: absolute;
+    bottom: 68px;
+
+    p {
+      color: $c-text-secondary;
+      text-align: center;
+      @include adaptive-font(14, 16);
+      font-weight: 500;
+      line-height: 1.36;
+      letter-spacing: -0.16px;
+    }
+  }
+
   &__bottom {
     max-width: calc(100% - 64px);
     position: absolute;

@@ -178,6 +178,11 @@
         @include adaptive-font(14, 16);
         font-weight: 700;
         line-height: 1.2;
+        transition: .3s ease-in-out;
+
+        @include hover() {
+          color: #99999D;
+        }
       }
     }
   }
@@ -222,6 +227,11 @@
           @include adaptive-font(14, 16);
           font-weight: 700;
           line-height: 1.2;
+          transition: .3s ease-in-out;
+
+          @include hover() {
+            color: #99999D;
+          }
         }
       }
     }
