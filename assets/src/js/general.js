@@ -1,6 +1,8 @@
 jQuery(function ($) {
     $(document).ready(function () {
 
+        $("video[autoplay]").each(function(){ this.play(); });
+
         if (innerWidth > 1024) {
             let mainSlider = new Swiper('.main-slider .swiper-container', {
                 direction: 'vertical',
