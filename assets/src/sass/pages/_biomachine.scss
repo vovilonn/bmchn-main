@@ -1051,6 +1051,68 @@
   display: none;
   position: relative;
 
+  &[data-store-slider-index="1"] {
+    .store-slider__content {
+      &:after {
+        background: url('../../img/store/move/store-item-color-1.png') no-repeat center;
+        background-size: contain;
+      }
+    }
+
+  }
+
+  &[data-store-slider-index="2"] {
+    .store-slider__content:after {
+      width: 112px;
+      height: 29px;
+    }
+    .store-slider__item {
+      &:nth-child(1) {
+        .store-slider__content:after {
+          background: url('../../img/store/origin/store-item-color-1.png') no-repeat center;
+          background-size: contain;
+        }
+      }
+      &:nth-child(3) {
+        .store-slider__content:after {
+          background: url('../../img/store/origin/store-item-color-2.png') no-repeat center;
+          background-size: contain;
+        }
+      }
+      &:nth-child(4) {
+        .store-slider__content:after {
+          background: url('../../img/store/origin/store-item-color-3.png') no-repeat center;
+          background-size: contain;
+        }
+      }
+      &:nth-child(6) {
+        .store-slider__content:after {
+          background: url('../../img/store/origin/store-item-color-4.png') no-repeat center;
+          background-size: contain;
+        }
+      }
+      &:nth-child(7) {
+        .store-slider__content:after {
+          background: url('../../img/store/origin/store-item-color-5.png') no-repeat center;
+          background-size: contain;
+        }
+      }
+      &:nth-child(8) {
+        .store-slider__content:after {
+          background: url('../../img/store/origin/store-item-color-6.png') no-repeat center;
+          background-size: contain;
+        }
+      }
+    }
+
+    .store-slider__img.--with-tag:before {
+      width: 80px;
+      height: 15px;
+      background: url('../../img/store-item-tag-2.svg') no-repeat center;
+      background-size: contain;
+    }
+  }
+
   &__nav {
     position: absolute;
     top: -50px;
@@ -1085,6 +1147,12 @@
     display: flex;
     flex-direction: column;
     max-width: 332px;
+
+    @include hover() {
+      .store-slider__content:after {
+        opacity: 1;
+      }
+    }
   }
 
   &__img {
@@ -1150,6 +1218,19 @@
     padding: 12px 0 0;
     display: flex;
     flex-direction: column;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 14px;
+      right: 3px;
+      width: 60px;
+      height: 29px;
+      display: block;
+      opacity: 0;
+      transition: .3s ease-in-out;
+    }
 
     span {
       color: #060606;
