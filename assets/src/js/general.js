@@ -115,7 +115,7 @@ jQuery(function ($) {
             let st = $(window).scrollTop();
             let section = $('.js-store-section')
             let sectionST = section.offset().top;
-            let point = sectionST - 200;
+            let point = sectionST - 400;
 
             if (st >= point) {
                 section.removeClass('--inverted');
