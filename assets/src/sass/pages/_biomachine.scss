@@ -1048,6 +1048,7 @@
   padding: 154px 32px 77px;
   background: #F1F1F1 !important;
   transition: .5s ease-in-out;
+  overflow: hidden;
 
   @include media('<tablet') {
     padding: 88px 16px 44px;
@@ -1474,6 +1475,7 @@
   background: linear-gradient(180deg, #020202 0%, #1F1F1F 85.61%);
   width: 100%;
   z-index: 3 !important;
+  overflow: hidden;
 
   @include media('<tablet') {
     padding: 44px 16px;
