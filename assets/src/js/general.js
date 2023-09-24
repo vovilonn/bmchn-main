@@ -69,26 +69,36 @@ jQuery(function ($) {
                 let storeSlider = new Swiper('.js-store-slider[data-store-slider-index="' + index + '"] .swiper-container', {
                     direction: 'horizontal',
                     mousewheel: false,
-                    slidesPerView: 4,
+                    slidesPerView: 1.8,
                     spaceBetween: 12,
                     pagination: false,
                     navigation: {
                         nextEl: '.js-store-slider[data-store-slider-index="' + index + '"] .js-store-slider-next',
                         prevEl: '.js-store-slider[data-store-slider-index="' + index + '"] .js-store-slider-prev'
                     },
+                    breakpoints: {
+                        768: {
+                            slidesPerView: 4,
+                        }
+                    },
                 });
             });
         }
 
-        let storeSlider = new Swiper('.js-team-slider .swiper-container', {
+        let teamSlider = new Swiper('.js-team-slider .swiper-container', {
             direction: 'horizontal',
             mousewheel: false,
-            slidesPerView: 3,
+            slidesPerView: 1.1,
             spaceBetween: 12,
             pagination: false,
             navigation: {
                 nextEl: '.js-team-slider-next',
                 prevEl: '.js-team-slider-prev'
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                }
             },
         });
 

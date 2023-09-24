@@ -28,24 +28,41 @@
   flex-direction: column;
   width: 100%;
 
+  @include media('<tablet') {
+
+  }
+
   &__text {
     max-width: 630px;
     text-align: center;
-    @include adaptive-font(88);
+    @include adaptive-font(48,88);
     font-weight: 700;
     letter-spacing: -1.76px;
     text-transform: uppercase;
 
+    @include media('<tablet') {
+      letter-spacing: -0.96px;
+      line-height: .96;
+    }
+
     span {
       line-height: .96;
       display: block;
-      padding-bottom: 32px;
+      @include media('>=tablet') {
+        padding-bottom: 32px;
+      }
     }
   }
 
   &__dsc {
-    position: absolute;
-    bottom: 68px;
+    @include media('>=tablet') {
+      position: absolute;
+      bottom: 68px;
+    }
+
+    @include media('<tablet') {
+      padding: 16px 0 32px;
+    }
 
     p {
       color: $c-text-secondary;
@@ -54,6 +71,10 @@
       font-weight: 500;
       line-height: 1.36;
       letter-spacing: -0.16px;
+
+      @include media('<tablet') {
+        letter-spacing: -0.14px;
+      }
     }
   }
 
@@ -86,6 +107,10 @@
         position: absolute;
         left: 0;
       }
+
+      @include media('<tablet') {
+        order: 2;
+      }
     }
 
     ul {
@@ -94,6 +119,7 @@
 
       @include media('<desktop') {
         margin-bottom: 20px;
+        order: 3;
       }
 
       li {
@@ -124,6 +150,7 @@
 
       @include media('<desktop') {
         margin-top: 10px;
+        order: 1;
       }
 
       @include hover() {

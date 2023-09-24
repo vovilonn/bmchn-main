@@ -1,6 +1,13 @@
 .footer .page-nav {
   position: absolute;
   top: 40px;
+
+  @include media('<tablet') {
+    position: relative;
+    top: unset;
+    padding-bottom: 0;
+    order: 3;
+  }
 }
 
 .page-nav {
