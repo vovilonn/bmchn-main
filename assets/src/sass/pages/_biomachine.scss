@@ -1716,7 +1716,6 @@
       color: #99999D;
       text-align: center;
       @include adaptive-font(14, 16);
-      font-size: 16px;
       font-weight: 500;
       line-height: 1.36;
       letter-spacing: -0.16px;
@@ -1726,6 +1725,7 @@
         max-width: 300px;
         letter-spacing: -0.14px;
         margin-bottom: 26px;
+        font-size: 14px;
       }
     }
 
