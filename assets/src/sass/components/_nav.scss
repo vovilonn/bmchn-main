@@ -11,6 +11,13 @@
   }
 }
 
+.vacancies-page .page-nav {
+  mix-blend-mode: difference;
+  background-color: transparent;
+  top: 41px;
+  bottom: unset;
+}
+
 .page-nav {
   position: fixed;
   padding: 0 0 20px;
