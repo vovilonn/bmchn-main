@@ -1,6 +1,16 @@
 jQuery(function ($) {
     $(document).ready(function () {
 
+        $('.js-page-nav li a').click(function (e) {
+           e.preventDefault();
+            let index = $(this).attr('data-page-nav-index');
+            $('.js-page-nav-popup').addClass('--active');
+            $('.js-page-nav-popup .js-page-nav-inner[data-page-nav-index="'+ index +'"]').addClass('--active');
+        });
+        $('.js-page-nav-popup .js-close').click(function (){
+            $('.js-page-nav-popup, .js-page-nav-inner').removeClass('--active');
+        })
+
         $("video[autoplay]").each(function(){ this.play(); });
 
         if (innerWidth > 1024) {
