@@ -16,7 +16,6 @@ jQuery(function ($) {
         if (innerWidth > 1024) {
             let mainSlider = new Swiper('.main-slider .swiper-container', {
                 direction: 'vertical',
-                effect: 'fade',
                 mousewheel: true,
                 slidesPerView: 1,
                 pagination: {
