@@ -28,6 +28,10 @@
   left: 0;
   width: 100%;
 
+  @include media('<desktop') {
+    min-height: 80vh;
+  }
+
 
   &__center {
     display: flex;
