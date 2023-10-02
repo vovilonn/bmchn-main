@@ -428,7 +428,7 @@
 
     p {
       @include adaptive-font(16, 20);
-      font-weight: 500;
+      font-weight: 400;
       line-height: 1.2;
       letter-spacing: -0.6px;
 
@@ -1829,6 +1829,6 @@
 
 
 .bg-gradient {
-  background: linear-gradient(180deg, #020202 0%, #1F0309 24.34%, #030D18 56.78%, #040F1D 100%);
+  background: linear-gradient(180deg, #020202 0%, #1F0309 30.52%, #030D18 67.4%, #040F1D 100%);
   transition: .5s ease-in-out;
 }
