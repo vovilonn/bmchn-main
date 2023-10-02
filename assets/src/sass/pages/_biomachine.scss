@@ -1356,7 +1356,6 @@
   &__item {
     display: flex;
     flex-direction: column;
-    max-width: 332px;
 
     @include hover() {
       .store-slider__content:after {
