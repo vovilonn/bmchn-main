@@ -94,7 +94,7 @@
     }
 
     @include media('<desktop') {
-      flex-direction: column-reverse;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
@@ -111,7 +111,8 @@
       }
 
       @include media('<tablet') {
-        order: 2;
+        order: 3;
+        margin-top: 10px;
       }
     }
 
@@ -121,7 +122,7 @@
 
       @include media('<desktop') {
         margin-bottom: 16px;
-        order: 3;
+        order: 1;
       }
 
       li {
@@ -151,8 +152,7 @@
       }
 
       @include media('<desktop') {
-        margin-top: 10px;
-        order: 1;
+        order: 2;
       }
 
       @include hover() {
