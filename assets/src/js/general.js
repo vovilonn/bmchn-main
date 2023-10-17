@@ -117,7 +117,7 @@ jQuery(function ($) {
             let sectionST = section.offset().top;
             let sectionHeight = section.height();
             let windowHeight = $(window).height();
-            let point = (sectionST + sectionHeight) - windowHeight;
+            let point = (sectionST + sectionHeight);
 
             if (st >= point) {
                 $('.footer').addClass('--visible');
