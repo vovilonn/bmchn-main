@@ -29,7 +29,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
-
+    margin: 12px;
+    
     &[data-page-nav-index="1"] {
 
     }
@@ -85,7 +86,7 @@
       line-height: 1.36;
       letter-spacing: -0.16px;
       margin-bottom: 32px;
-      max-width: 309px;
+      max-width: 430px;
     }
 
     .btn {

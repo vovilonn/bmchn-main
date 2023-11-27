@@ -1,8 +1,11 @@
 .header-nav {
+	/* z-index: 10000; */
 	max-width: 500px;
 	padding: 0;
 	right: 0;
 	left: unset;
+	cursor: pointer;
+
 }
 
 .header-nav__list {
@@ -63,9 +66,9 @@
 
 .header-nav__links li a {
 	gap: 6px;
-    display: flex;
-    font-size: 16px;
-    line-height: 19.2px;
+  display: flex;
+  font-size: 16px;
+	line-height: 19.2px;
 }
 
 .header-nav__links {
@@ -107,6 +110,9 @@
 
 .page-nav {
 	z-index: 17;
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
 }
 
 .page-nav ul li a:hover {
@@ -119,9 +125,11 @@
 }
 
 .biomachine-page .footer.--visible {
-    z-index: 2;
+    z-index: 1000;
+		width: 50%;
+    margin-left: 25%;
+    margin-right: 50%;
 }
-
 .page-nav-popup__inner h3 {
 	max-width: 357px;
 }
@@ -168,6 +176,9 @@
 .academy-join-title {
 	width: 100%;
 	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 .academy-join-title h2 {
@@ -176,16 +187,26 @@
 	line-height: 84.48px;
 	letter-spacing: calc(1em / 50);
 	text-decoration: underline;
+	text-transform: uppercase;
 	color: #99999D;
 }
 
 .academy-join-title p {
+	width: 50%;
 	color: #F1F1F1;
+	
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 .academy-join-title p:last-child {
 	margin: 20px 0 0 0;
 	color: #99999D;
+	padding-top: 16px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 
 .based {
@@ -216,6 +237,8 @@
 
 .academy-footer a {
 	margin: 0 16px 0 0;
+	text-transform: uppercase;
+
 }
 
 .academy-nav {

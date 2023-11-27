@@ -17,14 +17,22 @@
 
     h1 {
       text-align: center;
-      @include adaptive-font(88);
+      font-size: 88px;
       font-weight: 700;
       line-height: .96;
       letter-spacing: -1.76px;
       text-transform: uppercase;
       margin-bottom: 16px;
       max-width: 950px;
+
     }
+
+
+@media (max-width: 501px) {
+  h1 {
+   font-size: 48px;
+  }
+ }
 
     p {
       max-width: 370px;
@@ -36,9 +44,14 @@
       letter-spacing: -0.16px;
       margin-bottom: 56px;
     }
+
+   
   }
 
   &__head {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 85%;
     display: flex;
     justify-content: space-between;
     padding-bottom: 16px;
@@ -54,15 +67,23 @@
         color: #F1F1F1;
       }
     }
+
+
   }
 
   &__grid {
-    display: flex;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(383px, 420px));
+    // grid-gap: 10px;
     flex-wrap: wrap;
+
   }
 
   &__item {
-    width: calc(33.3% - 8px);
+    // width: calc(33.3% - 8px);
+    min-width: 383px;
+    max-width: 420px;
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
@@ -74,6 +95,7 @@
 
   &__img {
     min-height: 520px;
+    max-height: 520px;
     position: relative;
     display: flex;
     align-items: center;
@@ -99,6 +121,211 @@
       height: 100%;
       object-position: center;
       object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .vacancies__head {
+    margin-left: none;
+    margin-right: none;
+    max-width: 100%;
+  }
+}
+
+
+.vacancy-popup-content {
+  background-color: #1F1F1F;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border-radius: 6px;
+  width: 70%; /* Could be more or less, depends on screen size */
+  display: flex;
+  align-items: center;
+  gap: 36px;
+
+
+.btn {
+  cursor: pointer;
+  color: black;
+  @include adaptive-font(16);
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 14px 24px;
+  border-radius: 8px;
+  background: #F1F1F1;
+  backdrop-filter: blur(7.5px);
+  display: flex;
+  align-items: center;
+  transition: .3s ease-in-out;
+
+  @include hover() {
+    color: $c-text-primary;
+    background: #101010;
+  }
+
+  &:after {
+    content: '';
+    width: 35px;
+    height: 22px;
+    background: url('../../img/btn-arr.svg') no-repeat center;
+    background-size: contain;
+    margin-left: 8px;
+  }
+}
+
+  h2 {
+    color: #99999D;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  h1 {
+    color: #F1F1F1;
+    font-weight: 700;
+    font-size: 32px;
+
+    padding-top: 16px;
+    padding-bottom: 32px;
+  }
+
+  p {
+    color: #99999D;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.76px;
+  }
+
+  button {
+    color: #99999D;
+    @include adaptive-font(16, 20);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.6px;
+    text-transform: uppercase;
+    transition: .3s ease-in-out;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    font-family: $font-primary;
+
+    @include media('<tablet') {
+      letter-spacing: -0.48px;
+      line-height: 1.2;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      width: 90%;
+      height: 2px;
+      border-radius: 2px;
+      background: #99999D;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s ease-in-out;
+
+      @include media('<tablet') {
+        width: 40px;
+      }
+    }
+
+    &.active {
+      color: #F1F1F1;
+
+      &:after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    @include hover() {
+      color: #F1F1F1;
+    }
+  }
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.vacancy-popup {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  opacity: 0; /* Initial opacity */
+  visibility: hidden; /* Initially not visible */
+  transition: visibility 0s, opacity 0.5s linear; /* Transition effect */
+}
+
+.vacancy-popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.vacancy-popup-text-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+
+.vacancy-popup-request {
+  align-items: center;
+  padding-top: 32px;
+  display: flex;
+  justify-content: space-around;
+  width: fit-content;
+  gap: 16px;
+}
+
+.request-hint{
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  width: 155px;
+}
+
+
+
+
+@media (max-width: 1200px) {
+  .vacancy-popup-content {
+    flex-direction: column;
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 14px;
+    }
+
+    p {
+      font-size:  12px;
+
     }
   }
 }

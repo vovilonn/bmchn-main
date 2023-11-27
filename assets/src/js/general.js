@@ -1,15 +1,88 @@
 jQuery(function ($) {
+
+    $(document).ready(function() {
+        // Handler for opening the popup
+        $('.js-page-nav li a').click(function (e) {
+            e.preventDefault();
+            let index = $(this).attr('data-page-nav-index');
+    
+            // Check if the preference to not show popup is set in localStorage
+            if (localStorage.getItem('noShowPopup') === 'true') {
+                return; // Exit the function if the preference is set
+            }
+    
+            // Remove --active class from all popups
+            $('.js-page-nav-inner').removeClass('--active');
+    
+            // Now add --active class only to the clicked popup
+            $('.js-page-nav-popup').addClass('--active');
+            $('.js-page-nav-popup .js-page-nav-inner[data-page-nav-index="' + index + '"]').addClass('--active');
+        });
+    
+        // Handler for closing the popup normally
+        $('.js-page-nav-popup .js-close').click(function (){
+            $('.js-page-nav-popup, .js-page-nav-inner').removeClass('--active');
+        });
+    
+        // Handler for the hard close button
+        $('.js-page-nav-popup .js-close-hard').click(function (){
+            $('.js-page-nav-popup, .js-page-nav-inner').removeClass('--active');
+            localStorage.setItem('noShowPopup', 'true'); // Save preference in localStorage
+        });
+    });
+    
     $(document).ready(function () {
 
         $('.js-page-nav li a').click(function (e) {
-           e.preventDefault();
+            e.preventDefault();
             let index = $(this).attr('data-page-nav-index');
-            $('.js-page-nav-popup').addClass('--active');
-            $('.js-page-nav-popup .js-page-nav-inner[data-page-nav-index="'+ index +'"]').addClass('--active');
+            if(!localStorage.getItem('noShowPopup')){
+                $('.js-page-nav-inner').removeClass('--active');
+                $('.js-page-nav-popup').addClass('--active');
+                $('.js-page-nav-popup .js-page-nav-inner[data-page-nav-index="' + index + '"]').addClass('--active');
+            }else{
+                window.location = this.href
+            }
         });
+ 
+        $('.btn-arrow').click(function(){
+            var item = $(this).closest('.vacancies__item');
+            var imageSrc = item.find('.vacancies__img img').attr('src');
+            var text = item.find('.vacancies__img span').text();
+    
+            var popupContent = '<div class="vacancy-popup-content">' +
+                              
+                               '<img src="' + imageSrc + '" alt="Vacancy Image">' +
+                               ` <div class="vacancy-popup-text-container">
+                               <h2>ВАКАНСИЯ</h2>
+                               <h1>${text.toUpperCase()}</h1>
+                               <p class="vacancy-popup-info">
+                                   Описание вакансии. Описание вакансии.Описание вакансии.Описание вакансии.Описание вакансии.Описание вакансии.Описание вакансии.Описание вакансии.Описание вакансии.Описание вакансии.Описание вакансии.Описание вакансии.Описание вакансии.Описание вакансии.
+                               </p> `+
+                                `                               <div class="vacancy-popup-request">
+                                <a class="btn">
+                                    <span>Подать заявку</span>
+                                </a>
+                                <span class="request-hint">
+                                Заполните заявку в нашем Telegram-боте.
+                                </span>
+                                </div>
+                              </div>`+
+                              '<span class="close-btn">&times;</span>' +
+                               '</div>';
+    
+                               console.log(popupContent);
+            $('.vacancy-popup').html(popupContent).addClass('show');
+    
+            $('.close-btn').click(function() {
+                $('.vacancy-popup').removeClass('show');
+            });
+        });
+ 
         $('.js-page-nav-popup .js-close').click(function (){
             $('.js-page-nav-popup, .js-page-nav-inner').removeClass('--active');
-        })
+        });
+        
 
         $("video[autoplay]").each(function(){ this.play(); });
 
@@ -120,6 +193,7 @@ jQuery(function ($) {
             let point = (sectionST + sectionHeight);
 
             if (st >= point) {
+                console.log('change footer')
                 $('.footer').addClass('--visible');
                 $('.biomachine-string__bg').addClass('--visible');
                 $('.js-page-nav').addClass('--hidden');
@@ -173,7 +247,7 @@ jQuery(function ($) {
                     percent = +Math.abs(percent);
                     percent = Math.round(percent);
                     let value = 0;
-
+                
                     if (percent >= 50 && percent < 55) {
                         value = 0.9;
                     } else if (percent >= 55 && percent < 60) {

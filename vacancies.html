@@ -109,7 +109,7 @@
         <div class="vacancies__item">
             <div class="vacancies__img">
                 <span>Режиссёр монтажа</span>
-                <img src="assets/img/image-214.png" alt="Vacancy Image">
+                <img src="assets/img/vacancy-director.png" alt="Vacancy Image">
             </div>
             <button class="btn-arrow">
                 <span>Попробовать</span>
@@ -118,7 +118,7 @@
         <div class="vacancies__item">
             <div class="vacancies__img">
                 <span>Оператор-постановщик</span>
-                <img src="assets/img/image-213.png" alt="Vacancy Image">
+                <img src="assets/img/vacancy-operator.png" alt="Vacancy Image">
             </div>
             <button class="btn-arrow">
                 <span>Попробовать</span>
@@ -127,7 +127,7 @@
         <div class="vacancies__item">
             <div class="vacancies__img">
                 <span>Главред BMCHN</span>
-                <img src="assets/img/image-215.png" alt="Vacancy Image">
+                <img src="assets/img/vacancy-redactor.png" alt="Vacancy Image">
             </div>
             <button class="btn-arrow">
                 <span>Попробовать</span>
@@ -136,7 +136,7 @@
         <div class="vacancies__item">
             <div class="vacancies__img">
                 <span>Менеджер Telegram</span>
-                <img src="assets/img/image-216.png" alt="Vacancy Image">
+                <img src="assets/img/vacancy-manager.png" alt="Vacancy Image">
             </div>
             <button class="btn-arrow">
                 <span>Попробовать</span>
@@ -145,7 +145,7 @@
         <div class="vacancies__item">
             <div class="vacancies__img">
                 <span>Управляющий директор MEDIA</span>
-                <img src="assets/img/image-217.png" alt="Vacancy Image">
+                <img src="assets/img/vacancy-media.png" alt="Vacancy Image">
             </div>
             <button class="btn-arrow">
                 <span>Попробовать</span>
@@ -154,7 +154,7 @@
         <div class="vacancies__item">
             <div class="vacancies__img">
                 <span>Управляющий директор ACADEMY</span>
-                <img src="assets/img/image-218.png" alt="Vacancy Image">
+                <img src="assets/img/vacancy-acdir.png" alt="Vacancy Image">
             </div>
             <button class="btn-arrow">
                 <span>Попробовать</span>
@@ -163,7 +163,7 @@
         <div class="vacancies__item">
             <div class="vacancies__img">
                 <span>Ресерчер – Исследователь</span>
-                <img src="assets/img/image-219.png" alt="Vacancy Image">
+                <img src="assets/img/vacancy-researcher.png" alt="Vacancy Image">
             </div>
             <button class="btn-arrow">
                 <span>Попробовать</span>
@@ -187,12 +187,49 @@
 
 <nav class="page-nav js-page-nav">
     <ul>
-        <li><a href="https://academy.bmchn.com">ACADEMY</a></li>
-        <li><a href="https://store.bmchn.com">STORE</a></li>
-        <li class="active"><a href="biomachine.html">BIOMACHINE</a></li>
+        <li><a data-page-nav-index="1" href="https://academy.bmchn.com">ACADEMY</a></li>
+        <li><a data-page-nav-index="2" href="https://store.bmchn.com">STORE</a></li>
+        <li><a data-page-nav-index="3" href="biomachine.html">BIOMACHINE</a></li>
     </ul>
 </nav>
 
+<div class="vacancy-popup">
+</div>
+
+<div class="page-nav-popup js-page-nav-popup">
+    <div class="page-nav-popup__inner js-page-nav-inner" data-page-nav-index="1">
+        <h3>Перейти в Biomachine Academy?</h3>
+        <p>Обучающая платформа, на которой ты сможешь быстро и эффективно усовершенствовать свою Биомашину.</p>
+        <a href="https://academy.bmchn.com/" class="btn">
+            <span>Перейти</span>
+        </a>
+        <button class="js-close"></button>
+
+        <button class="js-close-hard">Больше не показывать</button>
+    </div>
+    <div class="page-nav-popup__inner js-page-nav-inner" data-page-nav-index="2">
+        <h3>Перейти в Biomachine STORE?</h3>
+        <p>Интернет-магазин одежды, аксессуаров и прочих физических товаров.</p>
+        <a href="https://store.bmchn.com/" class="btn">
+            <span>Перейти</span>
+        </a>
+
+        <button class="js-close"></button>
+
+        <button class="js-close-hard">Больше не показывать</button>
+    </div>
+    <div class="page-nav-popup__inner js-page-nav-inner" data-page-nav-index="3">
+        <h3>Перейти на страницу о бренде?</h3>
+        <p>На этом сайте мы развёрнуто рассказываем о нашем бренде, философии и ценностях.</p>
+        <a href="https://bmchn.com/" class="btn">
+            <span>Перейти</span>
+        </a>
+
+        <button class="js-close"></button>
+
+        <button class="js-close-hard">Больше не показывать</button>
+    </div>
+</div>
 
 <script src="assets/src/js/vendor/jquery.min.js"></script>
 <script src="assets/src/js/vendor/swiper-bundle.js"></script>
