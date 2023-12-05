@@ -161,7 +161,7 @@
 }
 
 .academy-join {
-	background: linear-gradient(180deg,#020202 0,#040f1c 100%);
+	background: black;
     height: 100vh;
     width: 100%;
 	display: flex;
@@ -185,6 +185,7 @@
 
 .academy-join-title p {
 	color: #F1F1F1;
+	width: 47%;
 }
 
 .academy-join-title p:last-child {

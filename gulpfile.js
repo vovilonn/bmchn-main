@@ -24,13 +24,11 @@ function js() {
 
 function browser() {
     browserSync.init({
-        proxy: 'localhost/base',
-        files: [
-            './**/*.php'
-        ]
-    });
+        server: {baseDir: './' }
+        });
 
     watch('./assets/src/sass/**/*.scss', css).on('change', browserSync.reload);
+    watch('*.scss', css).on('change', browserSync.reload);
     watch('./assets/src/js/*.js', js).on('change', browserSync.reload);
 }
 
